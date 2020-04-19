@@ -30,20 +30,23 @@ def diff_time (fajr_time, magrib_time):
     
     while not(fj_hr == mg_hr):
         fj_hr -= 1
-        if fj_hr == 0:
-            fj_hr = 24
-        
+        if not(fj_hr == mg_hr):
+            if fj_hr == 0:
+                fj_hr = 24
+    
         if not (fj_hr == mg_hr):
             mg_hr += 1
-            if mg_hr == 24:
-                mg_hr = 0    
+            if not(fj_hr == mg_hr):
+                if mg_hr == 24:
+                    mg_hr = 0    
     mid_hr = fj_hr
-    
+    print(f"Done line 44: fajr time: {fj_hr} .. mgrib: {mg_hr}")
     fj_hr = ((mid_hr + 1) * 60) + fajr_time[1]
     mg_hr = ((mid_hr - 1) * 60) + magrib_time[1]
-    
+    print(f"fajr time: {fj_hr} .. mgrib: {mg_hr}")
     while not(fj_hr == mg_hr):
         fj_hr -= 1
+        print(f"Done line 50: fajr time: {fj_hr} .. mgrib: {mg_hr}")
         if fj_hr == 0:
             fj_hr = 12 * 60
         mg_hr += 1
