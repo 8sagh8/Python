@@ -40,13 +40,13 @@ def diff_time (fajr_time, magrib_time):
                 if mg_hr == 24:
                     mg_hr = 0    
     mid_hr = fj_hr
-    print(f"Done line 44: fajr time: {fj_hr} .. mgrib: {mg_hr}")
+    
     fj_hr = ((mid_hr + 1) * 60) + fajr_time[1]
     mg_hr = ((mid_hr - 1) * 60) + magrib_time[1]
-    print(f"fajr time: {fj_hr} .. mgrib: {mg_hr}")
+    
     while not(fj_hr == mg_hr):
         fj_hr -= 1
-        print(f"Done line 50: fajr time: {fj_hr} .. mgrib: {mg_hr}")
+        
         if fj_hr == 0:
             fj_hr = 12 * 60
         mg_hr += 1
@@ -86,3 +86,11 @@ if time[0] < 12:
     print("pm.")
 else:
     print("am.")
+
+######################################
+#####  NEW FEATURE  ############
+
+import datetime
+now = datetime.datetime.now()
+print ("Current date and time : ")
+print (now.strftime("%H:%M:%S"))
